@@ -1,0 +1,23 @@
+tenants:
+  # name: Once set, DO NOT change. 
+  - name: labdev
+    mongo_uri: mongodb://10.236.173.129:27017/?directConnection=true
+    mongo_db: learninglocker_v2
+    mongo_collection: statements
+    clickhouse_uri: tcp://default:xo8w3ErsdLKMSDM@10.236.173.99:9000
+    clickhouse_db: labdev
+    clickhouse_table: statements
+  # name: Once set, DO NOT change. 
+  - name: dcat
+    mongo_uri: mongodb://10.236.173.85:27017/?directConnection=true
+    mongo_db: learninglocker_v2
+    mongo_collection: statements
+    clickhouse_uri: tcp://default:xo8w3ErsdLKMSDM@10.236.173.99:9000
+    clickhouse_db: dcat
+    clickhouse_table: dcat_statements
+postgres_db: lrd_platform
+pg_database_url: postgres://postgres:Secure_Password@10.236.173.129:15432/lrd_platform
+# encryption_salt: Once set, DO NOT change. 1352863 1356886 1377113  32370 1388417
+encryption_salt: YOUR_SALT_HERE 
+batch_size: 5000
+number_of_workers: 10
