@@ -190,16 +190,16 @@ async fn process_tenant(tenant_config: &TenantConfig) -> Result<(), Box<dyn Erro
         start_time.format("%Y-%m-%d %H:%M:%S.%f").to_string(),
         end_time.format("%Y-%m-%d %H:%M:%S.%f").to_string()
     );
-    println!("{}", start_time);
-    println!("{}", end_time);
-    println!("{}", clickhouse_query);
+    // println!("{}", start_time);
+    // println!("{}", end_time);
+    // println!("{}", clickhouse_query);
 
     let clickhouse_result = clickhouse_client
         .query(clickhouse_query.as_str())
         .fetch_all()
         .await?;
 
-    println!("{:?}", clickhouse_result);
+    println!("Clickhouse Count: {:?}", clickhouse_result);
 
     // // Process the result
     // if let Some(row) = clickhouse_result.into_iter().next() {
